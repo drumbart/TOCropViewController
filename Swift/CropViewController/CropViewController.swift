@@ -376,6 +376,14 @@ open class CropViewController: UIViewController, TOCropViewControllerDelegate {
     }
     
     /**
+     Explicit toolbar insets - iPhones with notches
+     */
+    public var toolBarInsets: UIEdgeInsets {
+        set { toCropViewController.toolBarInsets = newValue }
+        get { return toCropViewController.toolBarInsets }
+    }
+    
+    /**
      This class internally manages and abstracts access to a `TOCropViewController` instance
      :nodoc:
      */

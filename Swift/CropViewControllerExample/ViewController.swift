@@ -23,6 +23,9 @@ class ViewController: UIViewController, CropViewControllerDelegate, UIImagePicke
         
         let cropController = CropViewController(croppingStyle: croppingStyle, image: image)
         cropController.delegate = self
+        if #available(iOS 11.0, *) {
+            cropController.toolBarInsets = view.safeAreaInsets
+        }
         
         // Uncomment this if you wish to provide extra instructions via a title label
         //cropController.title = "Crop Image"

@@ -277,7 +277,7 @@ static const CGFloat kTOCropViewControllerToolbarHeight = 44.0f;
         frame.size.height = kTOCropViewControllerToolbarHeight;
 
         if (self.toolbarPosition == TOCropViewControllerToolbarPositionBottom) {
-            frame.origin.y = CGRectGetHeight(self.view.bounds) - (frame.size.height + insets.bottom);
+            frame.origin.y = CGRectGetHeight(self.view.bounds) - (frame.size.height + _toolBarInsets.bottom);
         } else {
             frame.origin.y = insets.top;
         }
@@ -316,7 +316,7 @@ static const CGFloat kTOCropViewControllerToolbarHeight = 44.0f;
 
         // Set Y and adjust for height
         if (self.toolbarPosition == TOCropViewControllerToolbarPositionBottom) {
-            frame.size.height -= (insets.bottom + kTOCropViewControllerToolbarHeight);
+            frame.size.height -= (_toolBarInsets.bottom + kTOCropViewControllerToolbarHeight);
         } else if (self.toolbarPosition == TOCropViewControllerToolbarPositionTop) {
 			frame.origin.y = kTOCropViewControllerToolbarHeight + insets.top;
             frame.size.height -= frame.origin.y;
