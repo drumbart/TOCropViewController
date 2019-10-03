@@ -79,6 +79,8 @@ NS_ASSUME_NONNULL_BEGIN
 /* Done button frame for popover controllers */
 @property (nonatomic, readonly) CGRect doneButtonFrame;
 
+- (void)enableDoneButton:(BOOL)enable;
+
 @end
 
 NS_ASSUME_NONNULL_END

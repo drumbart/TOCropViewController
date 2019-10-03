@@ -305,6 +305,7 @@
             self.cancelButtonTapped();
     }
     else if (button == self.doneTextButton || button == self.doneIconButton) {
+        [self enableDoneButton:NO];
         if (self.doneButtonTapped)
             self.doneButtonTapped();
     }
@@ -620,6 +621,11 @@
     }
 
     return self.cancelTextButton;
+}
+
+- (void)enableDoneButton:(BOOL)enable {
+    [_doneTextButton setEnabled:enable];
+    [_doneIconButton setEnabled:enable];
 }
 
 @end

@@ -927,6 +927,8 @@ static const CGFloat kTOCropViewControllerToolbarHeight = 44.0f;
                 return;
             }
             
+            [self.toolbar enableDoneButton:YES];
+            
             bool isCallbackOrDelegateHandled = NO;
             
             if (self.onDidFinishCancelled != nil) {
@@ -983,6 +985,7 @@ static const CGFloat kTOCropViewControllerToolbarHeight = 44.0f;
         });
         
         isCallbackOrDelegateHandled = YES;
+        [self.toolbar enableDoneButton:YES];
     }
     //If the delegate/block that requires the specific cropped image is provided, call it
     else if (isDidCropToImageDelegateAvailable || isDidCropToImageCallbackAvailable) {
@@ -1006,6 +1009,7 @@ static const CGFloat kTOCropViewControllerToolbarHeight = 44.0f;
         });
         
         isCallbackOrDelegateHandled = YES;
+        [self.toolbar enableDoneButton:YES];
     }
     
     if (!isCallbackOrDelegateHandled) {
